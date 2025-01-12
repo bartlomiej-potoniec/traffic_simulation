@@ -38,22 +38,22 @@ class Car:
 
     def move(self, light_state):
         if self.direction == 'up':
-            if light_state == 'green' or (self.y < 300 and light_state != 'red'):
+            if light_state == 'green' or (light_state != 'green' and self.y < 350):
                 self.y -= CAR_SPEED
             else:
                 self.moving = False
         elif self.direction == 'down':
-            if light_state == 'green' or (self.y > 300 and light_state != 'red'):
+            if light_state == 'green' or (light_state != 'green' and self.y > 150):
                 self.y += CAR_SPEED
             else:
                 self.moving = False
         elif self.direction == 'left':
-            if light_state == 'green' or (self.x < 300 and light_state != 'red'):
+            if light_state == 'green' or (light_state != 'green' and self.x < 350):
                 self.x -= CAR_SPEED
             else:
                 self.moving = False
         elif self.direction == 'right':
-            if light_state == 'green' or (self.x > 300 and light_state != 'red'):
+            if light_state == 'green' or (light_state != 'green' and self.x > 150):
                 self.x += CAR_SPEED
             else:
                 self.moving = False
